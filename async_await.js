@@ -13,11 +13,11 @@ const premovie = async () => {
 
     })
 
-    const getpopcorn = new Promise((resolve , reject)  =>  resolve(`popcorn`));
+    const getpopcorn =     new Promise((resolve , reject)  =>  resolve(`popcorn`));
 
-    const getbutteronit  = new Promise((resolve , reject)  => resolve(`butter`)) ;
+    const getbutteronit  =  new Promise((resolve , reject)  => resolve(`butter`)) ;
 
-    const  getsomecolddrink = new Promise ((resolve , reject)  => resolve(`Cold drink`))
+    const getsomecolddrink = new Promise ((resolve , reject)  => resolve(`Cold drink`))
 
     let ticket = await promisewifebringigtickets ;
     console.log('wife  :  I have tickets')

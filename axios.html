@@ -7,23 +7,33 @@
     <title>Document</title>
 </head>
 <body>
+    <lable>phone number</lable>
+    <input type="text" id="val3"><br>
     <lable>firstname</lable>
     <input type="text" id="val1"><br>
     <lable>lastname </lable> <input type="text" id="val2"><br>
     <button onclick="myfun()">On Click</button>
+
+    <div id="show"></div>
     <script>
       async  function myfun() {
             var body = {
+                phone: document.getElementById("val3").value,
                 firstname: document.getElementById("val1").value,
                 lastname: document.getElementById("val2").value
             }
-          await   axios.post("https://crudcrud.com/api/da2b3f966a8d4cfc958917f73bca3b90/appointment/62bed7736f047803e8aeb861",body).then(res=>{
-                console.log(res)
-            }).catch(err =>{
-                console.log(err)
-            })
-            console.log(body)
-
+            
+            localStorage.setItem("date",JSON.stringify(body))               
+        //   await   axios.post("https://crudcrud.com/api/da2b3f966a8d4cfc958917f73bca3b90/appointment",body).then(res=>{
+        //         console.log(res)
+        //     }).catch(err =>{
+        //         console.log(err)
+        //     })
+        //     console.log(body)
+         var userdetails = localStorage.getItem("date")
+             console.log(userdetails)
+             const myobj = JSON.parse(userdetails)
+               document.getElementById("show").innerHTML = myobj.firstname
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
