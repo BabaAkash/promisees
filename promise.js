@@ -125,23 +125,22 @@ const posts = [
           // for(let i=0; i<posts.length; i++){
           //       newoutput += '<li>'+startpost +'</li>'
           // }
-          
-           
-         document.getElementById("demo").innerHTML = startpost.title ;
-     },2000)   
+     //     document.getElementById("demo").innerHTML = startpost.title ;
+         document.body.innerHTML = startpost.title ;
+     },1000)   
      }
 
  createPost({title:"post four"})
 .then(()=>{
    getpost()
    del().then((msg)=>{
-     
        getpost()
         getpost()
         newPost(msg)
-        del().then(() => {
+        del().then((msg) => {
              getpost()
              getpost()
+               newPost(msg)
              del().then(() => {
                   getpost()
                   
